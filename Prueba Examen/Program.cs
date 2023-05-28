@@ -11,9 +11,6 @@ namespace Prueba_Examen
         {
 
             Menu menu = new Menu();
-
-
-            //No olvidar quitar el comentario de procedimientos.IngresarDatos!!!
             menu.Opciones();
         }
     }
