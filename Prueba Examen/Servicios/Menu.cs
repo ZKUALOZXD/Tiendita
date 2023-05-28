@@ -9,6 +9,7 @@ namespace Prueba_Examen.Servicios
         public void Opciones()
         {
             int Opcion = 0;
+            int Elegir = 0;
 
             Procedimientos procedimientos = new Procedimientos();
 
@@ -64,20 +65,20 @@ namespace Prueba_Examen.Servicios
                     Console.WriteLine("Precione 1 si quiere 3 meses sin intereses");
                     Console.WriteLine("Precione 2 si no lo quiere.");
 
-                    int Elegir = 0;
-
-                    while (Elegir > 0 && Elegir < 3)
-
+                    do
+                    {
                         Elegir = int.Parse(Console.ReadLine());
 
-                    if (Elegir > 1)
-                    {
-
-                    }
-                    else
-                    {
-
-                    }
+                        if (Elegir == 1)
+                        {
+                            procedimientos.Descuento(Verificación);
+                            procedimientos.TresMSI(Verificación);
+                        }
+                        else
+                        {
+                            procedimientos.Descuento(Verificación);
+                        }
+                    } while (Elegir > 0 && Elegir < 3);
                     break;
                 case 3: //Descuento y opción de 6 o 12 msi
 
@@ -85,9 +86,28 @@ namespace Prueba_Examen.Servicios
                     Console.WriteLine("Precione 1 si quiere 6 meses sin intereses");
                     Console.WriteLine("precione 3 si quiere 12 meses sin intereses");
                     Console.WriteLine("Precione 4 si no lo quiere.");
+                    do
+                    {
+                        Elegir = int.Parse(Console.ReadLine());
 
-                    break;
+                        if (Elegir == 1)
+                        {
+                            procedimientos.Descuento(Verificación);
+                            procedimientos.SeisMSI(Verificación);
+                        }
+                        if (Elegir == 2)
+                        {
+                            procedimientos.Descuento(Verificación);
+                            procedimientos.DoceMSI(Verificación);
+                        }
+                        if (Elegir == 3)
+                        {
+                            procedimientos.Descuento(Verificación);
+                        }
+                    } while (Elegir > 0 && Elegir < 5);
+                break;
             }
+            procedimientos.ImprimirDatos();
         }
     }
 }

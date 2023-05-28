@@ -15,5 +15,6 @@ namespace Prueba_Examen.Entidades
         public double num5 { get; set; }
 
         public double GuradarTotal { get; set; }
+        public double GuardarDescuento { get; set; }
     }
 }

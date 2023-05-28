@@ -31,6 +31,12 @@ namespace Prueba_Examen.Servicios
             Console.Write("Ingrese su correo: ");
             cliente.Correo = Console.ReadLine();
         }
+        public void ImprimirDatos()
+        {
+            Console.WriteLine(cliente.Nombre);
+            Console.WriteLine(cliente.Telefono);
+            Console.WriteLine(cliente.Correo);
+        }
         public void IngresarPrecios()
         {
             Console.Clear();
@@ -60,6 +66,8 @@ namespace Prueba_Examen.Servicios
             double Descuento = Total * .1;
             Descuento = Total - Descuento;
             numeros.GuradarTotal = Descuento;
+
+            Console.WriteLine("El precio con descuento es de: " + Descuento);
             return Descuento;
         }
 
@@ -67,8 +75,10 @@ namespace Prueba_Examen.Servicios
         {
             Console.Clear ();
             this.Descuento(Total);
-            double TresMeses = Total / 3;
-            numeros.GuradarTotal = TresMeses;
+            double TresMeses = numeros.GuradarTotal / 3;
+            numeros.GuardarDescuento = TresMeses;
+
+            Console.WriteLine($"Estaría pagando un total de {TresMeses} a lo largo de 3 meses");
             return TresMeses;
         }
 
@@ -76,7 +86,10 @@ namespace Prueba_Examen.Servicios
         {
             Console.Clear();
             this.Descuento(Total);
-            double SeisMeses = Total / 6;
+            double SeisMeses = numeros.GuradarTotal / 6;
+            numeros.GuradarTotal = SeisMeses;
+
+            Console.WriteLine($"Estaría pagando un total de {SeisMeses} a lo largo de 6 meses");
             return SeisMeses;
         }
 
@@ -84,7 +97,10 @@ namespace Prueba_Examen.Servicios
         {
             Console.Clear();
             this.Descuento(Total);
-            double DoceMeses = Total / 12;
+            double DoceMeses = numeros.GuradarTotal / 12;
+            numeros.GuradarTotal = DoceMeses;
+
+            Console.WriteLine($"Estaría pagando un total de {DoceMeses} a lo largo de 12 meses");
             return DoceMeses;
         }
         #endregion

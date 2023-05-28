@@ -9,9 +9,11 @@ namespace Prueba_Examen
     {
         static void Main(string[] args)
         {
-            //Procedimientos procedimientos = new Procedimientos();
-            //procedimientos.Despliegue();
+
             Menu menu = new Menu();
+
+
+            //No olvidar quitar el comentario de procedimientos.IngresarDatos!!!
             menu.Opciones();
         }
     }
